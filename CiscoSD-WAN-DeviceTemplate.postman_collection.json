@@ -1,0 +1,113 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CiscoSD-WAN-DeviceTemplate",
+		"_postman_id": "78d5ce17-2316-47fd-32de-a19eccf2c7ee",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeviceTemplate",
+			"description": "",
+			"item": [
+				{
+					"name": "1.To Create Device Template With Feature Template Attached",
+					"description": "",
+					"item": [
+						{
+							"name": "To Create Device Template With Feature Template Attached",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/feature",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\t\t\t\t\t\"templateName\": \"Test-DeviceTemplate\",\n\t\t\t\t\t\t\t\"templateDescription\": \"Test-DeviceTemplate\",\n\t\t\t\t\t\t\t\"deviceType\": {{deviceType}},\n\t\t\t\t\t\t\t\"configType\": \"template\",\n\t\t\t\t\t\t\t\"factoryDefault\": false,\n\t\t\t\t\t\t\t\"policyId\": \"\",\n\t\t\t\t\t\t\t\"featureTemplateUidRange\": [],\n\t\t\t\t\t\t\t\"connectionPreferenceRequired\": true,\n\t\t\t\t\t\t\t\"connectionPreference\": true,\n\t\t\t\t\t\t\t\"generalTemplates\": [{\n\t\t\t\t\t\t\t\t\"templateId\": {{aaa-Feature-TemplateId}},\n\t\t\t\t\t\t\t\t\"templateType\": \"aaa\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"templateId\": {{system-vedge-Feature-TemplateId}},\n\t\t\t\t\t\t\t\t\"templateType\": \"system-vedge\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "2.To Attach Device With Device Template",
+					"description": "",
+					"item": [
+						{
+							"name": "To Attach Device With Device Template",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/config/input",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"templateId\": {{Device-TemplateId}},\n\t\"deviceIds\": [{{deviceIds}}],\n\t\"isEdited\": false,\n\t\"isMasterEdited\": false\n}"
+								},
+								"description": "Input params for executing this are: \n\"templateId\": 4th api's response-> templateId\n\"deviceIds\": 2nd api's response-> data\\deviceId"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "3.To Attach Device Template With Device Variable Values",
+					"description": "",
+					"item": [
+						{
+							"name": "To Attach Device Template With Device Variable Values",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/config/config",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\t\t\t\t\t\"templateId\": {{Device-TemplateId}},\n\t\t\t\t\t\t\t\"device\": {\n\t\t\t\t\t\t\t\t/*input payload to be pasted here*/\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"isRFSRequired\": true,\n\t\t\t\t\t\t\t\"isEdited\": false,\n\t\t\t\t\t\t\t\"isMasterEdited\": false\n\t\t\t\t\t\t}"
+								},
+								"description": "Input params for executing this is: \n\"templateId\": 4th api's response-> templateId\n\nAlong with the above mentioned input param, payload should be extracted from outer proxy api's input payload. "
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
