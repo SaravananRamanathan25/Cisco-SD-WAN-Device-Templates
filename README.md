@@ -5,9 +5,9 @@ Cisco SD-WAN builds a API based architecture that's crucial for enterprises and 
 
 Once below templates are successfully created,  these can be grouped under one device template which can then attached to an edge device
 
-	Feature Templates
-	Local Policy Template
-	Security Policy Template
+Feature Templates
+Local Policy Template
+Security Policy Template
 
 # Device Template - POSTMAN Collection
 
@@ -16,14 +16,14 @@ This postman collection provides some example of various APIs dealing with Devic
 This POSTMAN environment and collection that can be used to interact with the Cisco SD-WAN powered by Viptela vManage REST API. You can edit the variables in the environment to point to your own vManage instance. The collection contains REST API calls to create device template, attach device with device template and attach device template with device variable values. Please note that the username should have write permission for "Template Configuration" Feature for the usergroup that it is associated with.
 
 # Steps to execute APIs in the Postman Collection
-	• Clone or Download the JSON files "CiscoSD-WAN-DeviceTemplate.postman_collection.json" and "Cisco-SD-WAN-Environment.postman_environment.json"  
-	• Import above files to the POSTMAN  
-	• In the POSTMAN, make sure you set the environment as "Cisco-SD-WAN-Environment" in the top right corner  
-	• Go to Environment options and edit the vmanage, j_username, j_password and port details as per your own vmanage environment
-	• In order to execute the first API under "DeviceTemplate\1.To Create Device Template With Feature Template Attached\To Create Device Template With Feature Template Attached", replace value for below parameters in the request body 
-		○ deviceType : type of the device 
-		○ aaa-Feature-TemplateId : templateId returned by vManage on successful execution of "To Create AAA Feature Template"
-		○ system-vedge-Feature-TemplateId : templateId returned by vManage on successful execution of "To Create System Feature Template"
+* Clone or Download the JSON files "CiscoSD-WAN-DeviceTemplate.postman_collection.json" and "Cisco-SD-WAN-Environment.postman_environment.json"  
+* Import above files to the POSTMAN  
+* In the POSTMAN, make sure you set the environment as "Cisco-SD-WAN-Environment" in the top right corner  
+* Go to Environment options and edit the vmanage, j_username, j_password and port details as per your own vmanage environment
+* In order to execute the first API under "DeviceTemplate\1.To Create Device Template With Feature Template Attached\To Create Device Template With Feature Template Attached", replace value for below parameters in the request body 
+	* deviceType : type of the device 
+	* aaa-Feature-TemplateId : templateId returned by vManage on successful execution of "To Create AAA Feature Template"
+	* system-vedge-Feature-TemplateId : templateId returned by vManage on successful execution of "To Create System Feature Template"
 	
 		After replacing the values, payload will somewhat look like as,
 		{
@@ -48,9 +48,9 @@ This POSTMAN environment and collection that can be used to interact with the Ci
 		}
 	On successful execution of above api, vManage will return the device templateId
 	
-	• In order to execute the second API under "DeviceTemplate\2.To Attach Device With Device Template\To Attach Device With Device Template", replace value for below parameters in the request body 
-		○ Device-TemplateId : templateId returned by vManage on successful execution of the first API "To Create Device Template With Feature Template Attached" 
-		○ deviceIds : uuid of the device. This value can be fetched using an api https://{{vmanage}}:{{port}}/dataservice/device
+* In order to execute the second API under "DeviceTemplate\2.To Attach Device With Device Template\To Attach Device With Device Template", replace value for below parameters in the request body 
+	* Device-TemplateId : templateId returned by vManage on successful execution of the first API "To Create Device Template With Feature Template Attached" 
+	* deviceIds : uuid of the device. This value can be fetched using an api https://{{vmanage}}:{{port}}/dataservice/device
 
 		After replacing the values, payload will somewhat look like as,
 		{
