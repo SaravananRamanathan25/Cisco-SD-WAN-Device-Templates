@@ -1,0 +1,176 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CiscoSD-WAN-DeviceTemplate",
+		"_postman_id": "78d5ce17-2316-47fd-32de-a19eccf2c7ee",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeviceTemplate",
+			"description": "",
+			"item": [
+				{
+					"name": "1.To Get Template ID of Feature Templates",
+					"description": "",
+					"item": [
+						{
+							"name": "To Get Template ID of Feature Templates",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/feature",
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "2.To Get Id of the device",
+					"description": "",
+					"item": [
+						{
+							"name": "To Get Id of the device",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/device",
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "3.To Create Device Template With Feature Template Attached",
+					"description": "",
+					"item": [
+						{
+							"name": "To Create Device Template With Feature Template Attached",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/feature",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\t\t\t\t\t\"templateName\": \"Test-DeviceTemplate\",\n\t\t\t\t\t\t\t\"templateDescription\": \"Test-DeviceTemplate\",\n\t\t\t\t\t\t\t\"deviceType\": {{deviceType}},\n\t\t\t\t\t\t\t\"configType\": \"template\",\n\t\t\t\t\t\t\t\"factoryDefault\": false,\n\t\t\t\t\t\t\t\"policyId\": \"\",\n\t\t\t\t\t\t\t\"featureTemplateUidRange\": [],\n\t\t\t\t\t\t\t\"connectionPreferenceRequired\": true,\n\t\t\t\t\t\t\t\"connectionPreference\": true,\n\t\t\t\t\t\t\t\"generalTemplates\": [{\n\t\t\t\t\t\t\t\t\"templateId\": {{aaa-Feature-TemplateId}},\n\t\t\t\t\t\t\t\t\"templateType\": \"aaa\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"templateId\": {{system-vedge-Feature-TemplateId}},\n\t\t\t\t\t\t\t\t\"templateType\": \"system-vedge\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "4.To Get Template ID of Device Template",
+					"description": "",
+					"item": [
+						{
+							"name": "To Get Template ID of Device Template",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device",
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "5.To Attach Device With Device Template",
+					"description": "",
+					"item": [
+						{
+							"name": "To Attach Device With Device Template",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/config/input",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"templateId\": {{Device-TemplateId}},\n\t\"deviceIds\": [{{deviceIds}}],\n\t\"isEdited\": false,\n\t\"isMasterEdited\": false\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "6.To Attach Device Template With Device Variable Values",
+					"description": "",
+					"item": [
+						{
+							"name": "To Attach Device Template With Device Variable Values",
+							"request": {
+								"url": "https://{{vmanage}}:{{port}}/dataservice/template/device/config/config",
+								"method": "POST",
+								"header": [
+									{
+										"key": "undefined",
+										"value": "undefined",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\t\t\t\t\t\"templateId\": {{Device-TemplateId}},\n\t\t\t\t\t\t\t\"device\": {\n\t\t\t\t\t\t\t\t/*input payload to be pasted here*/\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"isRFSRequired\": true,\n\t\t\t\t\t\t\t\"isEdited\": false,\n\t\t\t\t\t\t\t\"isMasterEdited\": false\n\t\t\t\t\t\t}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
