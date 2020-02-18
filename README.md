@@ -33,9 +33,10 @@ This POSTMAN environment and collection that can be used to interact with the Ci
 * In order to execute the fifth API under "DeviceTemplate\5.To Attach Device With Device Template\To Attach Device With Device Template", replace value for below parameters in the request body 
   * Device-TemplateId : templateId fetched from the fourth API
   * deviceIds : uuid fetched from the second API
-  * On successful execution of above api, vManage will return the device input variables as shown here![SampleAttachDevicewithDeviceTemplateOutput](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SampleAttachDevicewithDeviceTemplateOutput.png). Copy the output payload to a notepad.	
+  * On successful execution of above api, vManage will return the device input variables as shown here![SampleAttachDevicewithDeviceTemplateOutput](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SampleAttachDevicewithDeviceTemplateOutput.png). 
+Copy the output payload to a notepad.	
 * In order to execute the final API under "DeviceTemplate\6.To Attach Device Template With Device Variable Values\To Attach Device Template With Device Variable Values", 
   * In the request body replace Device-TemplateId with templateId fetched from the fourth API
   * From the notepad (which you have copy pasted in the above step), cut all the data present inside the "data" array and paste the same in the request payload. Enter value for all the variables as per your requirement.
-  * After replacing the values, payload will somewhat look like as shown in screenshot![SampleAttachDeviceTemplatewithDeviceVariableValuesPayload](https://github.com/SaravananRamanathan25/....png)
+  * After replacing the values, payload will somewhat look like as shown in screenshot![SampleAttachDeviceTemplatewithDeviceVariableValuesPayload](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SampleAttachDeviceTemplatewithDeviceVariableValuesPayload.png)
 * We have successfully created a device template and attached to a device.
