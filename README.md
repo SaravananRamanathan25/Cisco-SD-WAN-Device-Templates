@@ -1,4 +1,4 @@
-# Cisco SD-WAN - Device Template (REST API)
+# Cisco SD-WAN - Device Templates (REST API)
 The Cisco SD-WAN Solution (a.k.a Viptela) is a cloud-delivered overlay SD-WAN architecture that facilitates digital and cloud transformation for enterprises and communication service providers (CSP). It significantly reduces WAN costs and time to deploy new services.
 
 Cisco SD-WAN builds a API based architecture that's crucial for enterprises and CSPs to do the configuration automation through their internal tools.
