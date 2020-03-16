@@ -41,7 +41,3 @@ This POSTMAN environment and collection that can be used to interact with the Ci
   * After replacing the values, payload will somewhat look like as shown in screenshot![SampleAttachDeviceTemplatewithDeviceVariableValuesPayload](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SampleAttachDeviceTemplatewithDeviceVariableValuesPayload.png)
 * We have successfully created a device template and attached to a device.
 
-
-Local Policy Delete Operation Analysis	
-| Level | Analysis |
-| List (3rd level) | 1. Cannot be deleted if it is referenced in any 2nd level policy.<br> 2. Will not be auto deleted if the 2nd level parent policy is deleted. It has to be deleted manually.|
