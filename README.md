@@ -18,8 +18,9 @@ This POSTMAN environment and collection that can be used to interact with the Ci
 * Clone or Download the JSON files "CiscoSD-WAN-DeviceTemplate.postman_collection.json" and "Cisco-SD-WAN-Environment.postman_environment.json"  
 * Import above files to the POSTMAN  
 * In the POSTMAN, make sure you set the environment as "Cisco-SD-WAN-Environment" in the top right corner![SelectEnvDetails](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SelectEnvDetails-Postman.png)
-* Go to Environment options and edit the vmanage, j_username, j_password and port details as per your own vmanage environment![EditEnvDetails](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/UpdateEnvDetails_Postman.png)
-* First execute the API under "DeviceTemplate\1.To Get Template ID of Feature Templates\To Get Template ID of Feature Templates".
+* Go to Environment options and edit the vmanage, j_username, j_password and port details as per your own vmanage environment. **User account should have write permission for the feature "Template Configuration" Feature.**![EditEnvDetails](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/UpdateEnvDetails_Postman.png)
+* First execute the API under "Authentication\Authentication". This will make sure that you have logged into the vManage for that session.
+* Next execute the API under "DeviceTemplate\1.To Get Template ID of Feature Templates\To Get Template ID of Feature Templates".
   * In the response payload, search templateName and find its templateId![SearchFeatureTemplateId](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SearchFeatureTemplateId.png) For instance, TestTemplate-AAA and TestTemplate-System are the template names you would have created as per our Feature Templates repository [CiscoSD-WAN-FeatureTemplates](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Feature-Templates)
 * Next execute the API under "DeviceTemplate\2.To Get Id of the device\To Get Id of the device.
   * In the response payload, search deviceId or hostname or systemIp and find its deviceType and uuid![SearchDeviceDetails](https://github.com/SaravananRamanathan25/Cisco-SD-WAN-Device-Templates/blob/master/Images/SearchDeviceDetails.png)
