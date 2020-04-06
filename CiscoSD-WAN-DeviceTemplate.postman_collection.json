@@ -8,6 +8,42 @@
 	},
 	"item": [
 		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"url": "https://{{vmanage}}:{{port}}/j_security_check",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "j_username",
+									"value": "{{j_username}}",
+									"type": "text"
+								},
+								{
+									"key": "j_password",
+									"value": "{{j_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "DeviceTemplate",
 			"description": "",
 			"item": [
